@@ -22,6 +22,9 @@
 #ifndef __FCEU_TYPES
 #define __FCEU_TYPES
 
+#define PSS_STYLE 1
+#define HAVE_ASPRINTF 1
+
 #include <stdlib.h>
 #include <new>
 

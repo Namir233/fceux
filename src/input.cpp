@@ -840,6 +840,7 @@ static void TaseditorRewindOff(void);
 static void TaseditorCommand(void);
 extern void FCEUI_ToggleShowFPS();
 
+#if 0 // Rico
 struct EMUCMDTABLE FCEUI_CommandTable[]=
 {
 	{ EMUCMD_POWER,							EMUCMDTYPE_MISC,	FCEUI_PowerNES,					0, 0, "Power", EMUCMDFLAG_TASEDITOR },
@@ -986,11 +987,13 @@ struct EMUCMDTABLE FCEUI_CommandTable[]=
 	{ EMUCMD_FPS_DISPLAY_TOGGLE,			EMUCMDTYPE_MISC,		FCEUI_ToggleShowFPS,		0, 0, "Toggle FPS Display", EMUCMDFLAG_TASEDITOR },
 	{ EMUCMD_TOOL_DEBUGSTEPINTO,			EMUCMDTYPE_TOOL,		DebuggerStepInto,			0, 0, "Debugger - Step Into", EMUCMDFLAG_TASEDITOR },
 };
+#endif // Rico
 
 #define NUM_EMU_CMDS		(sizeof(FCEUI_CommandTable)/sizeof(FCEUI_CommandTable[0]))
 
 static int execcmd;
 
+#if 0 // Rico
 void FCEUI_HandleEmuCommands(TestCommandState* testfn)
 {
 	bool taseditor = FCEUMOV_Mode(MOVIEMODE_TASEDITOR);
@@ -1015,6 +1018,7 @@ void FCEUI_HandleEmuCommands(TestCommandState* testfn)
 		FCEUI_CommandTable[i].state = new_state;
 	}
 }
+#endif // Rico
 
 // Function not currently used
 //static void CommandUnImpl(void)
@@ -1418,10 +1422,12 @@ static void TaseditorCommand(void)
 **/
 EMUCMDTABLE* GetEmuCommandById(int cmd)
 {
+#if 0 // Rico
 	for (size_t i = 0; i<NUM_EMU_CMDS; ++i)
 	{
 		if (FCEUI_CommandTable[i].cmd == cmd)
 			return &FCEUI_CommandTable[i];
 	}
+#endif // Rico
 	return NULL;
 }
