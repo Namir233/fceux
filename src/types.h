@@ -22,6 +22,7 @@
 #ifndef __FCEU_TYPES
 #define __FCEU_TYPES
 
+#define FRAMESKIP 1
 #define PSS_STYLE 1
 #define HAVE_ASPRINTF 1
 
